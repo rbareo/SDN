@@ -15,9 +15,18 @@ enum class EDF::Types::States : short {
   
   NEWLINE,
   WHITESPACE,
+
+  SINGLE_LINE_COMMENT,
+  MULTILINE_COMMENT_START,
+
+  DECIMAL_PARTIAL,
+  INTERPOLATION_PARTIAL,
   
   IDENTIFIER,
   INTEGER,
+  STRING,
+  CHAR,
+
   STRING_START,
   STRING_BODY,
   STRING_END,
@@ -28,7 +37,6 @@ enum class EDF::Types::States : short {
   TEMPLATE_START,
   TEMPLATE_END,
   INTERPOLATION_START,
-  INTERPOLATION_END,
   
   LEFT_PARENTHESIS,
   RIGHT_PARENTHESIS,
@@ -58,8 +66,10 @@ enum class EDF::Types::States : short {
 struct EDF::Types::Token {
   EDF::Types::States state;
   std::string_view lexeme;
+  size_t line_number;
   
-  Token(EDF::Types::States state, std::string_view lexeme) : state(state), lexeme(lexeme) {};
+  Token(EDF::Types::States state, std::string_view lexeme, size_t line_number)
+    : state(state), lexeme(lexeme), line_number(line_number) {};
   ~Token() = default;
 };
 

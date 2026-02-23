@@ -7,5 +7,5 @@ class EDF::Parser {
     std::vector<std::unique_ptr<AST::Base>> nodes;
 
   public:
-    std::vector<std::unique_ptr<AST::Base>> parse();
+    // std::vector<std::unique_ptr<AST::Base>> parse();
 };
