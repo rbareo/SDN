@@ -1,0 +1,6 @@
+{
+  foo: @number,
+  bar?: {
+    baz: @string
+  }
+}

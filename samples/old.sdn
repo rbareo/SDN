@@ -1,0 +1,21 @@
+{
+  @define mixin: { // @define needed for the key to act as mixin
+    // ...
+  },
+  @const c: 4, // value-constant
+  foo: 42,
+  @if (@true) {
+    bar: {
+      baz: @calc(4 + 5),
+    }
+  } @else {
+    bar: {
+      baz: 1
+    }
+  },
+  test: 9,
+  test2: [1, 2, 3],
+  test3: ${FILE_DIRECTORY}, // returns directory of the file's location
+  test4: ${mixin}, // traverses over a reference of the mixin
+  test5: ${c} // substitutes in value of c directly
+}
