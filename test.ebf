@@ -1,8 +1,0 @@
-{
-  @define {
-    @mixin test: {
-      bar: 5 // test
-    }
-  },
-  ${test}
-}

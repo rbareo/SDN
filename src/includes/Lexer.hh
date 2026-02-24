@@ -2,6 +2,7 @@
 
 #include "EDF.hh"
 
+/*
 class EDF::Lexer {
   private:
     std::string_view source;
@@ -27,3 +28,4 @@ class EDF::Lexer {
     Lexer(std::string_view source) : source(source) {};
     ~Lexer() = default;
 };
+*/

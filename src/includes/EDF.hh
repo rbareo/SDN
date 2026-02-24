@@ -9,7 +9,7 @@
 
 namespace EDF {
   class Lexer;
-  class Parser;
+  // class Parser;
 }
 
 #include "Types.hh"

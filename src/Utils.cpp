@@ -9,12 +9,13 @@ std::string EDF::Utils::read_file(const std::string& file_name) {
 }
 
 int EDF::Utils::mainloop(std::string_view source) {
-  EDF::Lexer lexer(source);
+  /*EDF::Lexer lexer(source);
   std::vector<Token> tokens = lexer.tokenize();
   
   for (Token token : tokens) {
     std::cout << token.lexeme << "\n";
   }
-  
+  */
+ 
   return 0;
 }

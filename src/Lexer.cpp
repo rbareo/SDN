@@ -1,5 +1,6 @@
 #include "EDF.hh"
 
+/*
 namespace {
   using transitions = std::array<std::array<States, 128>, (size_t) States::NUMBER_STATES>;
   using acceptings = std::array<bool, (size_t) States::NUMBER_STATES>;
@@ -254,3 +255,4 @@ void EDF::Lexer::handle_multiline_comments() {
     position++;
   }
 }
+*/

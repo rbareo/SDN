@@ -1,5 +1,6 @@
-#pragma once
 
+#pragma once
+/*
 #include "EDF.hh"
 
 class EDF::Parser {
@@ -9,3 +10,4 @@ class EDF::Parser {
   public:
     // std::vector<std::unique_ptr<AST::Base>> parse();
 };
+*/

@@ -1,5 +1,5 @@
 #pragma once
-
+/*
 #include "EDF.hh"
 
 namespace EDF::Types::AST {
@@ -68,3 +68,4 @@ class AST::Binary_operator : public AST::Base {
       : Base(AST::Kinds::BINARY_OPERATOR), left(std::move(left)), right(std::move(right)), op(op) {};
     ~Binary_operator() = default;
 };
+*/

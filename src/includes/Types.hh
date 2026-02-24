@@ -10,6 +10,7 @@ namespace EDF::Types {
 }
 
 enum class EDF::Types::States : short {
+  /*
   UNKNOWN = -1,
   START,
   
@@ -61,6 +62,7 @@ enum class EDF::Types::States : short {
   CONST,
   
   NUMBER_STATES
+  */
 };
 
 struct EDF::Types::Token {
