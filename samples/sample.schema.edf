@@ -1,6 +1,5 @@
-{
-  foo: @number,
-  bar?: {
-    baz: @string
-  }
+{ // sample.schema.edf
+  @extends "partial.schema.edf", // extends passed schema
+  @override bar: number, // int or float
+  bar?: int
 }

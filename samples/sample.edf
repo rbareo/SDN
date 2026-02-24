@@ -1,20 +1,21 @@
-{
+{ // sample.edf
+  @schema "sample.schema.ebf", // validated against schema
+  @import "import.ebf" @as foreign, // includes all (non-local) definitions
+  // Note: @as creates a namespace
+
   @define {
-    @mixin bar: {
-      // ...
-    },
-    @const baz = 5
-  },
-  
-  foo: ${baz},
-  ex: ${bar},
-  ${...bar},
+    @const fallback = -1
+  }
 
-  @if (@true) {
-    // ...
+  foo: "example",
+
+  @if (length(foo) < 10) {
+    bar: #foreign.c
   } @else {
-    // ...
-  },
+    bar: #fallback
+  }, // Note: Trailing commas leave warnings (but not errors)
 
-  test: ${baz}
+  #foreign.test(4) // folds the fields of foreign.test into parent (root)
+
+  // Note: baz field not needed since it's optional
 }
