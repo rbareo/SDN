@@ -1,4 +1,0 @@
-{ // sdf.edf ; when in sdf mode, only @import and @schema are allowed directives
-  foo: 5,
-  bar: 9
-}

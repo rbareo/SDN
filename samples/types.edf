@@ -1,5 +1,0 @@
-{ // types.edf
-  @define {
-    @type union = number | int
-  }
-}

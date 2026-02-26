@@ -1,5 +1,0 @@
-{ // partial.schema.edf
-  @import "types.edf",
-  foo: string,
-  bar: string
-}
