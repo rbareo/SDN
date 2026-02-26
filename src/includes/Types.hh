@@ -11,11 +11,6 @@ namespace EDF::Types {
   struct Token;
 }
 
-enum class EDF::Types::Errors : short {
-  // LEXICAL_UNKNOWN_TOKEN ?
-  LEXICAL_UNEXPECTED_TOKEN
-};
-
 enum class EDF::Types::States : short {
   UNKNOWN = -1,
   START,
@@ -75,16 +70,6 @@ enum class EDF::Types::States : short {
   NUMBER_STATES
 };
 
-struct EDF::Types::Error {
-  EDF::Types::Errors error;
-  std::string_view lexeme;
-  size_t line_number;
-
-  Error(EDF::Types::Errors error, std::string_view lexeme, size_t line_number)
-    : error(error), lexeme(lexeme), line_number(line_number) {};
-  ~Error() = default;
-};
-
 struct EDF::Types::Token {
   EDF::Types::States state;
   std::string_view lexeme;
@@ -95,7 +80,5 @@ struct EDF::Types::Token {
   ~Token() = default;
 };
 
-using Errors = EDF::Types::Errors;
 using States = EDF::Types::States;
-using Error = EDF::Types::Error;
 using Token = EDF::Types::Token;

@@ -20,10 +20,7 @@ int EDF::Utils::mainloop(std::string_view source) {
 template <typename T>
 void EDF::Utils::testing(const T val) {
   /* NOTE: Remove before build */
-  for (std::expected<Token, Error> token : val) {
-    if (token)
-      std::cout << (size_t) token->state << "\n";
-    else
-      std::cout << "Error at " << token.error().line_number << ".\n";
+  for (auto token : val) {
+    std::cout << (size_t) token.state << "\n";
   }
 }

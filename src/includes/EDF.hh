@@ -6,11 +6,11 @@
 #include <array>
 #include <sstream>
 #include <memory>
-#include <expected>
+#include <exception>
 
 namespace EDF {
   class Lexer;
-  // class Parser;
+  class Parser;
 }
 
 #include "Types.hh"

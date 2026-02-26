@@ -1,13 +1,14 @@
-
 #pragma once
-/*
+
 #include "EDF.hh"
 
 class EDF::Parser {
   private:
-    std::vector<std::unique_ptr<AST::Base>> nodes;
+    const std::vector<Token>& tokens;
 
   public:
-    // std::vector<std::unique_ptr<AST::Base>> parse();
+    std::vector<std::unique_ptr<AST::Base>> parse();
+
+    Parser(std::vector<Token>& tokens) : tokens(tokens) {};
+    ~Parser() = default;
 };
-*/

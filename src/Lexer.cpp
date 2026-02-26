@@ -151,8 +151,8 @@ namespace {
   static constexpr acceptings acceptings_table = build_acceptings();
 }
 
-std::vector<std::expected<Token, Error>> EDF::Lexer::tokenize() {
-  std::vector<std::expected<Token, Error>> tokens = {};
+std::vector<Token> EDF::Lexer::tokenize() {
+  std::vector<Token> tokens = {};
   States last = States::START;
   size_t start_position;
 
@@ -172,9 +172,7 @@ std::vector<std::expected<Token, Error>> EDF::Lexer::tokenize() {
       auto return_block = finalize_state(last, start_position, i);
       
       if (return_block.state == States::UNKNOWN) 
-        tokens.push_back(std::unexpected(
-          Error(Errors::LEXICAL_UNEXPECTED_TOKEN, return_block.lexeme, line_number)
-        ));
+        throw new std::runtime_error("ERROR: Unknown Lexical Token at line " + std::to_string(line_number) + ".\n");
       else
         tokens.push_back(Token(return_block.state, return_block.lexeme, line_number));
 
@@ -190,9 +188,7 @@ std::vector<std::expected<Token, Error>> EDF::Lexer::tokenize() {
   // final token flush
   auto return_block = finalize_state(last, start_position, source.length());
   if (return_block.state == States::UNKNOWN) 
-    tokens.push_back(std::unexpected(
-    Error(Errors::LEXICAL_UNEXPECTED_TOKEN, return_block.lexeme, line_number)
-  ));
+    throw new std::runtime_error("ERROR: Unknown Lexical Token at line " + std::to_string(line_number) + ".\n");
   else
     tokens.push_back(Token(return_block.state, return_block.lexeme, line_number));
 

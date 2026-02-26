@@ -7,7 +7,7 @@ add_executable(EDF
   ${CMAKE_SOURCE_DIR}/src/main.cpp
   ${CMAKE_SOURCE_DIR}/src/Lexer.cpp
   ${CMAKE_SOURCE_DIR}/src/Utils.cpp
-  # ${CMAKE_SOURCE_DIR}/src/Parser.cpp
+  ${CMAKE_SOURCE_DIR}/src/Parser.cpp
 )
 
 target_include_directories(EDF

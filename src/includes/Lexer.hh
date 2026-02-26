@@ -16,7 +16,7 @@ class EDF::Lexer {
     Finalized_Return finalize_state(States state, size_t start_position, size_t position);
 
   public:
-    std::vector<std::expected<Token, Error>> tokenize();
+    std::vector<Token> tokenize();
     
     Lexer(std::string_view source) : source(source) {};
     ~Lexer() = default;
