@@ -9,27 +9,27 @@ namespace EDF::Types::AST {
 
   class Base; // Abstract
 
-  class Definition : public Base; // Abstract
-  class Mixin : public Definition;
-  class Const : public Definition;
-  class Type : public Definition;
-  class Alias : public Definition;
+  class Definition; // Abstract
+  class Mixin;
+  class Const;
+  class Type;
+  class Alias;
 
-  class Expression : public Base; // Abstract
-  class Unary_Expression : public Expression;
-  class Binary_Expression : public Expression;
+  class Expression; // Abstract
+  class Unary_Expression;
+  class Binary_Expression;
 
-  class Statement : public Base; // Abstract
-  class If : public Statement;
+  class Statement; // Abstract
+  class If;
 
-  class Value : public Base; // Abstract
-  class Function_Call : public Value;
-  class Reference : public Value;
+  class Value; // Abstract
+  class Function_Call;
+  class Reference;
 
-  class Literal : public Value; // Abstract
-  class Scalar : public Literal;
-  class Array : public Literal;
-  class Record : public Literal;
+  class Literal; // Abstract
+  class Scalar;
+  class Array;
+  class Record;
 }
 
 namespace AST = EDF::Types::AST;
@@ -63,4 +63,63 @@ enum class AST::Operators : short {
   NOT,
   AND,
   OR
+};
+
+// Abstract
+class AST::Base {
+};
+
+ // Abstract
+class AST::Definition : public AST::Base {
+};
+
+class AST::Mixin : public AST::Definition {
+};
+
+class vConst : public AST::Definition {
+};
+class vType : public AST::Definition {
+};
+
+class AST::Alias : public AST::Definition {
+
+};
+
+// Abstract
+class AST::Expression : public AST::Base {
+};
+
+class AST::Unary_Expression : public AST::Expression {
+};
+
+class AST::Binary_Expression : public AST::Expression {
+};
+
+// Abstract
+class AST::Statement : public AST::Base {
+};
+
+class AST::If : public AST::Statement {
+};
+
+// Abstract
+class AST::Value : public AST::Base {
+};
+
+class AST::Function_Call : public AST::Value {
+};
+class AST::Reference : public AST::Value {
+};
+
+// Abstract
+class AST::Literal : public AST::Value {
+};
+
+class AST::Scalar : public AST::Literal {
+};
+
+class AST::Array : public AST::Literal {
+};
+
+class AST::Record : public AST::Literal {
 };
