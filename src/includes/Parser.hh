@@ -4,11 +4,15 @@
 
 class EDF::Parser {
   private:
-    const std::vector<Token>& tokens;
+    std::vector<Token> tokens;
+
+    void simplify_tokens();
+    Token& current_token();
+    // bool match();
 
   public:
-    std::vector<std::unique_ptr<AST::Base>> parse();
+    std::unique_ptr<AST::Base> parse();
 
-    Parser(std::vector<Token>& tokens) : tokens(tokens) {};
+    Parser(std::vector<Token> tokens) : tokens(std::move(tokens)) {};
     ~Parser() = default;
 };
