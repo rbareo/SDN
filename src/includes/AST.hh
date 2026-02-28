@@ -76,9 +76,9 @@ class AST::Definition : public AST::Base {
 class AST::Mixin : public AST::Definition {
 };
 
-class vConst : public AST::Definition {
+class AST::Const : public AST::Definition {
 };
-class vType : public AST::Definition {
+class AST::Type : public AST::Definition {
 };
 
 class AST::Alias : public AST::Definition {
